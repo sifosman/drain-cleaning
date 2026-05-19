@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PHONE = "(865) 430-0000";
 const PHONE_HREF = "tel:+18654300000";
 const WHATSAPP_HREF =
@@ -69,8 +71,15 @@ export default function Home() {
       {/* ── NAV ── */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">D</div>
+          <div className="flex items-center gap-3">
+            <div className="relative w-12 h-12 overflow-hidden rounded-lg">
+              <Image 
+                src="/images/logo.jpg" 
+                alt="Drain Cleaning Knoxville Logo" 
+                fill
+                className="object-cover"
+              />
+            </div>
             <div className="flex flex-col">
               <span className="font-black text-slate-900 leading-none text-lg uppercase tracking-tighter">Drain Cleaning</span>
               <span className="font-bold text-orange-600 leading-none text-sm uppercase tracking-widest tracking-[0.2em]">Knoxville</span>
@@ -94,8 +103,16 @@ export default function Home() {
       <main>
         {/* ── HERO ── */}
         <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
-          <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070')] bg-cover bg-center"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+          <div className="absolute inset-0 opacity-30">
+            <Image 
+              src="/images/van.jpg" 
+              alt="Knoxville Service Area" 
+              fill 
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/85 to-transparent"></div>
           
           <div className="relative max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
@@ -126,11 +143,13 @@ export default function Home() {
             </div>
             <div className="hidden lg:block">
               <div className="relative p-4 border border-white/10 rounded-2xl bg-white/5 backdrop-blur-sm">
-                <div className="aspect-square bg-slate-800 rounded-xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
-                   {/* Placeholder for Hero Image */}
-                   <div className="w-full h-full flex items-center justify-center text-slate-600 font-black tracking-widest uppercase text-xs">
-                     Local Technician Photo
-                   </div>
+                <div className="aspect-square relative rounded-xl overflow-hidden shadow-2xl group">
+                   <Image 
+                    src="/images/kitchen.jpg" 
+                    alt="Drain Cleaning Technician" 
+                    fill 
+                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 bg-orange-600 p-6 rounded-xl shadow-xl">
                   <div className="text-4xl font-black">24/7</div>
@@ -179,21 +198,27 @@ export default function Home() {
                 {
                   title: "Drain Cleaning",
                   desc: "Professional snaking and clearing of kitchen, bathroom, and laundry drains. We remove hair, grease, and soap buildup.",
+                  image: "/images/kitchen.jpg"
                 },
                 {
                   title: "Hydro Jetting",
                   desc: "High-pressure water scouring for stubborn blockages, tree roots, and scaled-up iron pipes. The ultimate clean.",
+                  image: "/images/industrial.jpg"
                 },
                 {
                   title: "Sewer Services",
                   desc: "Main line cleaning and camera inspections. We find the source of recurring backups and fix them for good.",
+                  image: "/images/van.jpg"
                 },
               ].map((s) => (
                 <div
                   key={s.title}
-                  className="group p-8 border border-slate-100 rounded-2xl hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-100 transition-all duration-500"
+                  className="group p-8 border border-slate-100 rounded-2xl hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-100 transition-all duration-500 bg-white"
                 >
-                  <div className="w-12 h-1 bg-orange-600 mb-8 group-hover:w-24 transition-all duration-500"></div>
+                  <div className="aspect-video relative mb-8 rounded-lg overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <Image src={s.image} alt={s.title} fill className="object-cover" />
+                  </div>
+                  <div className="w-12 h-1 bg-orange-600 mb-6 group-hover:w-24 transition-all duration-500"></div>
                   <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tight">{s.title}</h3>
                   <p className="text-slate-500 text-sm leading-relaxed mb-8 font-medium">{s.desc}</p>
                   <a href="#contact" className="text-[10px] font-black uppercase tracking-widest text-orange-600 hover:text-blue-900 transition-colors">
