@@ -67,18 +67,24 @@ export default function Home() {
       />
 
       {/* ── NAV ── */}
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-          <span className="font-bold text-blue-700 text-lg">Drain Cleaning Knoxville</span>
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
-            <a href="#services" className="hover:text-blue-700 transition-colors">Services</a>
-            <a href="#faq" className="hover:text-blue-700 transition-colors">FAQ</a>
-            <a href="#areas" className="hover:text-blue-700 transition-colors">Areas</a>
-            <a href="#contact" className="hover:text-blue-700 transition-colors">Contact</a>
+      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">D</div>
+            <div className="flex flex-col">
+              <span className="font-black text-slate-900 leading-none text-lg uppercase tracking-tighter">Drain Cleaning</span>
+              <span className="font-bold text-orange-600 leading-none text-sm uppercase tracking-widest tracking-[0.2em]">Knoxville</span>
+            </div>
+          </div>
+          <nav className="hidden lg:flex items-center gap-8 text-xs font-black uppercase tracking-widest text-slate-600">
+            <a href="#services" className="hover:text-orange-600 transition-colors">Services</a>
+            <a href="#areas" className="hover:text-orange-600 transition-colors">Areas</a>
+            <a href="#faq" className="hover:text-orange-600 transition-colors">FAQ</a>
+            <a href="#contact" className="hover:text-orange-600 transition-colors">Contact</a>
           </nav>
           <a
             href={PHONE_HREF}
-            className="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-800 transition-colors"
+            className="bg-blue-900 text-white px-6 py-3 rounded-md text-sm font-black uppercase tracking-wider hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-200"
           >
             {PHONE}
           </a>
@@ -87,27 +93,50 @@ export default function Home() {
 
       <main>
         {/* ── HERO ── */}
-        <section className="bg-gradient-to-br from-blue-800 to-blue-600 text-white py-20 px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-              Drain Cleaning Knoxville, TN
-            </h1>
-            <p className="text-xl text-blue-100 mb-8 max-w-xl mx-auto">
-              Fast, reliable drain and sewer cleaning across Knox County. Clogged drains cleared same day — call now for a free quote.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={PHONE_HREF}
-                className="bg-white text-blue-800 font-bold px-8 py-4 rounded-xl text-lg hover:bg-blue-50 transition-colors"
-              >
-                📞 Call {PHONE}
-              </a>
-              <a
-                href="#contact"
-                className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl text-lg hover:bg-white hover:text-blue-800 transition-colors"
-              >
-                Get a Free Quote
-              </a>
+        <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
+          <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=2070')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+          
+          <div className="relative max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <div className="inline-block bg-orange-600 text-white text-[10px] font-black uppercase tracking-[0.3em] px-3 py-1 mb-6 rounded">
+                East Tennessee's Local Choice
+              </div>
+              <h1 className="text-5xl md:text-7xl font-black leading-[0.9] mb-6 tracking-tighter uppercase">
+                Expert Drain <br/>
+                <span className="text-orange-500 italic">Cleaning</span>
+              </h1>
+              <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-lg font-medium leading-relaxed">
+                Don't let a clogged drain ruin your day. We provide fast, honest, and professional drain clearing for Knoxville homeowners.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={PHONE_HREF}
+                  className="bg-orange-600 text-white font-black px-10 py-5 rounded-md text-sm uppercase tracking-widest hover:bg-white hover:text-orange-600 transition-all text-center shadow-xl"
+                >
+                  📞 Call {PHONE}
+                </a>
+                <a
+                  href="#contact"
+                  className="bg-white/10 backdrop-blur-md text-white border border-white/20 font-black px-10 py-5 rounded-md text-sm uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-all text-center"
+                >
+                  Get a Free Quote
+                </a>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <div className="relative p-4 border border-white/10 rounded-2xl bg-white/5 backdrop-blur-sm">
+                <div className="aspect-square bg-slate-800 rounded-xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+                   {/* Placeholder for Hero Image */}
+                   <div className="w-full h-full flex items-center justify-center text-slate-600 font-black tracking-widest uppercase text-xs">
+                     Local Technician Photo
+                   </div>
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-orange-600 p-6 rounded-xl shadow-xl">
+                  <div className="text-4xl font-black">24/7</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest">Emergency Service</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -130,39 +159,46 @@ export default function Home() {
         </section>
 
         {/* ── SERVICES ── */}
-        <section id="services" className="py-16 px-4 bg-white">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-3">
-              Drain &amp; Sewer Services in Knoxville
-            </h2>
-            <p className="text-center text-gray-500 mb-10 max-w-xl mx-auto">
-              From a slow kitchen sink to a full sewer backup, we handle every drain problem in the Knoxville area.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
+        <section id="services" className="py-24 px-4 bg-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+              <div className="max-w-xl">
+                <span className="text-orange-600 font-black uppercase tracking-[0.3em] text-[10px]">What We Do</span>
+                <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-4 tracking-tighter uppercase">
+                  Specialized <br/>
+                  <span className="text-blue-900">Drain Solutions</span>
+                </h2>
+              </div>
+              <p className="text-slate-500 max-w-sm font-medium leading-relaxed">
+                From kitchen sinks to main sewer lines, we use industrial-grade equipment to get your home flowing again.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
                   title: "Drain Cleaning",
-                  icon: "🔧",
-                  desc: "We clear clogged kitchen, bathroom, and floor drains fast using professional snaking and cutting equipment. No mess, no guesswork.",
+                  desc: "Professional snaking and clearing of kitchen, bathroom, and laundry drains. We remove hair, grease, and soap buildup.",
                 },
                 {
                   title: "Hydro Jetting",
-                  icon: "💧",
-                  desc: "High-pressure water jetting scours your pipes from the inside — removing grease, scale, roots, and debris for a long-lasting clear.",
+                  desc: "High-pressure water scouring for stubborn blockages, tree roots, and scaled-up iron pipes. The ultimate clean.",
                 },
                 {
-                  title: "Sewer Line Cleaning",
-                  icon: "🏠",
-                  desc: "Slow drains throughout your home? We inspect and clean your main sewer line to restore full flow and prevent backups.",
+                  title: "Sewer Services",
+                  desc: "Main line cleaning and camera inspections. We find the source of recurring backups and fix them for good.",
                 },
               ].map((s) => (
                 <div
                   key={s.title}
-                  className="bg-blue-50 rounded-2xl p-6 border border-blue-100 hover:shadow-md transition-shadow"
+                  className="group p-8 border border-slate-100 rounded-2xl hover:border-orange-200 hover:shadow-2xl hover:shadow-orange-100 transition-all duration-500"
                 >
-                  <div className="text-4xl mb-3">{s.icon}</div>
-                  <h3 className="text-xl font-bold text-blue-800 mb-2">{s.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+                  <div className="w-12 h-1 bg-orange-600 mb-8 group-hover:w-24 transition-all duration-500"></div>
+                  <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tight">{s.title}</h3>
+                  <p className="text-slate-500 text-sm leading-relaxed mb-8 font-medium">{s.desc}</p>
+                  <a href="#contact" className="text-[10px] font-black uppercase tracking-widest text-orange-600 hover:text-blue-900 transition-colors">
+                    Request Quote →
+                  </a>
                 </div>
               ))}
             </div>
