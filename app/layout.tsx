@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Professional drain cleaning in Knoxville, TN. Clogged drains, sewer line blockages, hydro jetting, and emergency drain service. Call for a free quote.",
   keywords:
-    "drain cleaning knoxville, drain cleaning knoxville tn, sewer cleaning knoxville, hydro jetting knoxville, clogged drain knoxville, drain service knoxville",
+    "drain cleaning knoxville, drain cleaning knoxville tn, sewer cleaning knoxville, hydro jetting knoxville, drain cleaning farragut tn, drain cleaning powell tn, drain cleaning maryville tn, drain cleaning oak ridge tn",
   alternates: { canonical: "https://draincleaningknoxville.com/" },
   openGraph: {
     title: "Drain Cleaning Knoxville | Fast Local Drain & Sewer Service",

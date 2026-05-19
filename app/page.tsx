@@ -44,7 +44,7 @@ const faqSchema = {
       name: "Which areas of Knoxville do you serve?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We serve all of Knox County including Knoxville, Farragut, Powell, Hardin Valley, Maryville, Alcoa, Oak Ridge, Seymour, and Lenoir City.",
+        text: "We serve all of Knox County and surrounding areas including Knoxville, Farragut, Powell, Hardin Valley, Maryville, Alcoa, Oak Ridge, Seymour, and Lenoir City. We are your local choice for drain cleaning in Farragut and beyond.",
       },
     },
     {
@@ -196,9 +196,9 @@ export default function Home() {
         {/* ── AREAS ── */}
         <section id="areas" className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Areas We Serve</h2>
-            <p className="text-gray-500 mb-8">
-              We provide drain cleaning services throughout Knox County and the surrounding region.
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Professional Drain Cleaning in Your Neighborhood</h2>
+            <p className="text-gray-500 mb-8 max-w-2xl mx-auto">
+              We provide fast, local drain and sewer services throughout Knox County and surrounding cities. If you need a drain cleared in any of these areas, we can typically be on-site same-day.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {[
@@ -207,12 +207,12 @@ export default function Home() {
                 "Lenoir City", "Halls", "Karns", "Corryton",
                 "Mascot", "Strawberry Plains", "Jefferson City",
               ].map((city) => (
-                <span
+                <div
                   key={city}
-                  className="bg-blue-50 text-blue-800 border border-blue-200 px-4 py-2 rounded-full text-sm font-medium"
+                  className="bg-blue-50 text-blue-800 border border-blue-200 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2"
                 >
-                  {city}, TN
-                </span>
+                  <span className="text-blue-400">📍</span> {city}, TN
+                </div>
               ))}
             </div>
           </div>
