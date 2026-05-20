@@ -1,0 +1,36 @@
+{
+  "business_name": "Drain Cleaning Knoxville",
+  "phone": "(865) 430-0000",
+  "email": "mohamed@owdsolutions.co.za",
+  "website": "https://draincleaningknoxville.com",
+  "address": {
+    "street": "UPDATE_WITH_YOUR_KNOXVILLE_ADDRESS",
+    "city": "Knoxville",
+    "state": "TN",
+    "zip": "UPDATE_ZIP",
+    "country": "USA"
+  },
+  "categories": [
+    "Plumber",
+    "Drain Cleaning Service",
+    "Sewer Cleaning Service"
+  ],
+  "tagline": "East Tennessee's Local Choice for Specialized Drain Solutions",
+  "description_short": "Expert drain and sewer cleaning in Knoxville. We specialize in hydro jetting, root removal, and same-day service for Knox County homeowners.",
+  "description_long": "Drain Cleaning Knoxville provides professional drain and sewer services across East Tennessee. We understand local challenges like Tennessee Red Clay and root intrusion from native Oak trees. Unlike generic services, we prioritize pipe safety, avoiding harsh chemicals on Knoxville's older clay and iron infrastructure. Average 45-minute response time in West Knoxville.",
+  "social_links": {
+    "facebook": "",
+    "yelp": "",
+    "instagram": ""
+  },
+  "service_area": [
+    "Knoxville",
+    "Farragut",
+    "Powell",
+    "Maryville",
+    "Oak Ridge",
+    "Alcoa",
+    "Seymour",
+    "Lenoir City"
+  ]
+}

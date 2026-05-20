@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Hotfrog",
+    "url": "https://www.hotfrog.com/add-your-business",
+    "selectors": {
+      "name": "input[name*='name']",
+      "phone": "input[name*='phone']",
+      "email": "input[name*='email']",
+      "website": "input[name*='website']"
+    }
+  },
+  {
+    "name": "YellowPages",
+    "url": "https://adsolutions.yp.com/get-listed",
+    "selectors": {
+      "name": "input[id*='businessName']",
+      "phone": "input[id*='phone']"
+    }
+  },
+  {
+    "name": "Cylex",
+    "url": "https://www.cylex-usa.com/add-business",
+    "selectors": {
+      "name": "input[id*='name']",
+      "email": "input[id*='email']"
+    }
+  },
+  {
+    "name": "ShowMeLocal",
+    "url": "https://www.showmelocal.com/register.aspx",
+    "selectors": {
+      "name": "input[id*='bizname']",
+      "phone": "input[id*='phone']"
+    }
+  }
+]
