@@ -165,15 +165,42 @@ export default function Home() {
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
               { icon: "✅", label: "Licensed & Insured" },
-              { icon: "⚡", label: "Same-Day Service" },
-              { icon: "📍", label: "Knoxville Local" },
-              { icon: "🚨", label: "24/7 Emergency" },
+              { icon: "⚡", label: "Average 45m Response" },
+              { icon: "📍", label: "Knox County Local" },
+              { icon: "🚨", label: "24/7 Expert Dispatch" },
             ].map((b) => (
               <div key={b.label} className="flex flex-col items-center gap-1">
                 <span className="text-2xl">{b.icon}</span>
                 <span className="text-sm font-semibold text-gray-700">{b.label}</span>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── NON-COMMODITY: LOCAL CHALLENGES ── */}
+        <section className="py-24 px-4 bg-slate-50">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-orange-600 font-black uppercase tracking-[0.3em] text-[10px]">Information Gain</span>
+              <h2 className="text-4xl font-black text-slate-900 mt-4 tracking-tighter uppercase leading-none">
+                Why Knoxville Plumbing <br/>
+                <span className="text-blue-900 italic">Has Unique Problems</span>
+              </h2>
+              <div className="mt-8 space-y-6 text-slate-600 font-medium leading-relaxed">
+                <p>
+                  Most plumbing advice you find online is generic. But here in East Tennessee, we deal with <span className="text-slate-900 font-bold">Tennessee Red Clay</span>. This heavy, mineral-rich soil expands and contracts significantly with our rain cycles, putting immense pressure on older clay and cast iron pipes common in neighborhoods like <span className="text-slate-900 font-bold">Fourth & Gill</span> or <span className="text-slate-900 font-bold">Sequoyah Hills</span>.
+                </p>
+                <p>
+                  When a drain slows down in Knoxville, it's rarely just a "hair clog." We often find <span className="text-orange-600 font-bold italic">root intrusion</span> from local Oak and Maple trees that have cracked the pipe joints, seeking the moisture inside.
+                </p>
+                <div className="p-6 bg-white rounded-xl border-l-4 border-orange-600 shadow-sm italic text-sm">
+                  "The #1 mistake we see Knoxville homeowners make is using store-bought chemical cleaners on 50-year-old pipes. These chemicals generate heat that can actually soften and collapse old Orangeburg or clay pipes before the clog even clears."
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
+              <Image src="/images/industrial.jpg" alt="Knoxville Pipe Inspection" fill className="object-cover" />
+            </div>
           </div>
         </section>
 
@@ -202,7 +229,7 @@ export default function Home() {
                 },
                 {
                   title: "Hydro Jetting",
-                  desc: "High-pressure water scouring for stubborn blockages, tree roots, and scaled-up iron pipes. The ultimate clean.",
+                  desc: "While every big brand pushes hydro jetting as a 'one size fits all' solution, our practitioners only recommend it after a camera inspection. For Knoxville's older, more fragile pipes, we prioritize safety over high-pressure to avoid structural damage.",
                   image: "/images/industrial.jpg"
                 },
                 {
