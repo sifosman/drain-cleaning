@@ -382,20 +382,20 @@ export default function Home() {
                   name="name"
                   placeholder="Your Name"
                   required
-                  className="rounded-lg px-4 py-3 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="rounded-lg px-4 py-3 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
                 <input
                   type="tel"
                   name="phone"
                   placeholder="Phone Number"
                   required
-                  className="rounded-lg px-4 py-3 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="rounded-lg px-4 py-3 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
                 <textarea
                   name="message"
                   placeholder="Describe your drain issue (e.g. slow drain, backup, location in home)"
                   rows={4}
-                  className="rounded-lg px-4 py-3 text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+                  className="rounded-lg px-4 py-3 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
                 />
                 <button
                   type="submit"
