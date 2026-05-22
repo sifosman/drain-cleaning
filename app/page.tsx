@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const PHONE = "(865) 430-0000";
 const PHONE_HREF = "tel:+18654300000";
@@ -61,8 +64,76 @@ const faqSchema = {
 };
 
 export default function Home() {
+  const [showThankYou, setShowThankYou] = useState(false);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('sent') === '1') {
+      setShowThankYou(true);
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, []);
+
+  const ContactForm = () => (
+    <form
+      action="https://formsubmit.co/mohamed@owdsolutions.co.za"
+      method="POST"
+      className="flex flex-col gap-4"
+    >
+      <input type="hidden" name="_subject" value="New Drain Cleaning Quote Request - Knoxville" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://draincleaningknoxville.com/?sent=1" />
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        className="rounded-lg px-4 py-3 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number"
+        required
+        className="rounded-lg px-4 py-3 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+      <textarea
+        name="message"
+        placeholder="Describe your drain issue (e.g. slow drain, backup, location in home)"
+        rows={4}
+        className="rounded-lg px-4 py-3 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+      />
+      <button
+        type="submit"
+        className="bg-white text-blue-800 font-bold py-3 rounded-lg hover:bg-blue-50 transition-colors"
+      >
+        Send My Free Quote Request
+      </button>
+    </form>
+  );
+
   return (
     <>
+      {/* Thank You Popup */}
+      {showThankYou && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Thank You!</h3>
+            <p className="text-gray-600 mb-6">Your quote request has been received. We'll contact you shortly to schedule your drain cleaning service.</p>
+            <button
+              onClick={() => setShowThankYou(false)}
+              className="bg-blue-800 text-white font-bold px-8 py-3 rounded-lg hover:bg-blue-900 transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -139,6 +210,12 @@ export default function Home() {
                 >
                   Get a Free Quote
                 </a>
+              </div>
+
+              {/* Quick Contact Form in Hero */}
+              <div className="mt-8 p-6 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
+                <p className="text-sm font-semibold mb-4 text-white/90">Quick Quote Request</p>
+                <ContactForm />
               </div>
             </div>
             <div className="hidden lg:block">
@@ -257,6 +334,16 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── QUICK FORM AFTER SERVICES ── */}
+        <section className="py-16 px-4 bg-orange-50">
+          <div className="max-w-xl mx-auto">
+            <h3 className="text-2xl font-bold text-center text-gray-900 mb-6">Need Drain Cleaning Now?</h3>
+            <div className="bg-white p-6 rounded-xl shadow-lg">
+              <ContactForm />
+            </div>
+          </div>
+        </section>
+
         {/* ── HOW IT WORKS ── */}
         <section id="process" className="py-16 px-4 bg-gray-50">
           <div className="max-w-4xl mx-auto">
@@ -369,41 +456,7 @@ export default function Home() {
               </div>
 
               {/* Form */}
-              <form
-                action="https://formsubmit.co/mohamed@owdsolutions.co.za"
-                method="POST"
-                className="flex flex-col gap-4"
-              >
-                <input type="hidden" name="_subject" value="New Drain Cleaning Quote Request - Knoxville" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://draincleaningknoxville.com/?sent=1" />
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  className="rounded-lg px-4 py-3 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  required
-                  className="rounded-lg px-4 py-3 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                />
-                <textarea
-                  name="message"
-                  placeholder="Describe your drain issue (e.g. slow drain, backup, location in home)"
-                  rows={4}
-                  className="rounded-lg px-4 py-3 bg-white text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
-                />
-                <button
-                  type="submit"
-                  className="bg-white text-blue-800 font-bold py-3 rounded-lg hover:bg-blue-50 transition-colors"
-                >
-                  Send My Free Quote Request
-                </button>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </section>
