@@ -29,7 +29,7 @@ const localBusinessSchema = {
   description:
     "Professional drain cleaning, hydro jetting, and sewer line services in Knoxville, TN and surrounding areas.",
   url: "https://draincleaningknoxville.com",
-  telephone: "+18654300000",
+  telephone: "+18653787865",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Knoxville",

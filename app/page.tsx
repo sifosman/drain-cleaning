@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-const PHONE = "(865) 430-0000";
-const PHONE_HREF = "tel:+18654300000";
+const PHONE = "(865) 378-7865";
+const PHONE_HREF = "tel:+18653787865";
 const WHATSAPP_HREF =
   "https://wa.me/27658475289?text=Hi%2C%20I%20need%20drain%20cleaning%20in%20Knoxville";
 
