@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = "force-static";
+
 export async function POST(request: Request) {
   const twiml = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>

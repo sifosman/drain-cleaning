@@ -1,7 +1,24 @@
 [
   {
+    "name": "Yelp",
+    "url": "https://biz.yelp.com/signup",
+    "requires_address": true,
+    "priority": "high",
+    "selectors": {
+      "name": "input[name*='businessName']",
+      "phone": "input[name*='phone']",
+      "email": "input[name*='email']",
+      "website": "input[name*='website']",
+      "address": "input[name*='address']",
+      "city": "input[name*='city']",
+      "zip": "input[name*='zip']"
+    }
+  },
+  {
     "name": "Hotfrog",
     "url": "https://www.hotfrog.com/add-your-business",
+    "requires_address": false,
+    "priority": "medium",
     "selectors": {
       "name": "input[name*='name']",
       "phone": "input[name*='phone']",
@@ -12,6 +29,8 @@
   {
     "name": "YellowPages",
     "url": "https://adsolutions.yp.com/get-listed",
+    "requires_address": true,
+    "priority": "high",
     "selectors": {
       "name": "input[id*='businessName']",
       "phone": "input[id*='phone']"
@@ -20,6 +39,8 @@
   {
     "name": "Cylex",
     "url": "https://www.cylex-usa.com/add-business",
+    "requires_address": false,
+    "priority": "medium",
     "selectors": {
       "name": "input[id*='name']",
       "email": "input[id*='email']"
@@ -28,6 +49,8 @@
   {
     "name": "ShowMeLocal",
     "url": "https://www.showmelocal.com/register.aspx",
+    "requires_address": false,
+    "priority": "medium",
     "selectors": {
       "name": "input[id*='bizname']",
       "phone": "input[id*='phone']"

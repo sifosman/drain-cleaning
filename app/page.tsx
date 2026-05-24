@@ -76,7 +76,7 @@ export default function Home() {
 
   const ContactForm = () => (
     <form
-      action="https://formsubmit.co/mohamed@owdsolutions.co.za"
+      action="https://formspree.io/f/xojbnarr"
       method="POST"
       className="flex flex-col gap-4"
     >

@@ -4,11 +4,12 @@
   "email": "mohamed@owdsolutions.co.za",
   "website": "https://draincleaningknoxville.com",
   "address": {
-    "street": "UPDATE_WITH_YOUR_KNOXVILLE_ADDRESS",
+    "street": "USE_REAL_KNOXVILLE_ADDRESS_OR_VIRTUAL_OFFICE",
     "city": "Knoxville",
     "state": "TN",
-    "zip": "UPDATE_ZIP",
-    "country": "USA"
+    "zip": "37919",
+    "country": "USA",
+    "note": "For citations requiring address: Use home address in Knoxville OR rent virtual office (UPS Store/Regus). For service-area businesses, mark as 'serves customers at their location' to hide address from public."
   },
   "categories": [
     "Plumber",
