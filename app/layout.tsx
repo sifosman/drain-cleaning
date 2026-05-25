@@ -28,7 +28,7 @@ const localBusinessSchema = {
   name: "Drain Cleaning Knoxville",
   description:
     "Professional drain cleaning, hydro jetting, and sewer line services in Knoxville, TN and surrounding areas.",
-  url: "https://draincleaningknoxville.com",
+  url: "https://draincleaningknoxville.com/",
   telephone: "+18653787865",
   address: {
     "@type": "PostalAddress",
