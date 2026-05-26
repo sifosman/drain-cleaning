@@ -162,6 +162,7 @@ export default function Home() {
             <a href="#faq" className="hover:text-orange-600 transition-colors">FAQ</a>
             <a href="#contact" className="hover:text-orange-600 transition-colors">Contact</a>
           </nav>
+          {/* Mobile nav hidden for brevity - desktop nav above */}
           <a
             href={PHONE_HREF}
             className="bg-blue-900 text-white px-6 py-3 rounded-md text-sm font-black uppercase tracking-wider hover:bg-orange-600 transition-all shadow-lg hover:shadow-orange-200"
@@ -302,17 +303,20 @@ export default function Home() {
                 {
                   title: "Drain Cleaning",
                   desc: "Professional snaking and clearing of kitchen, bathroom, and laundry drains. We remove hair, grease, and soap buildup.",
-                  image: "/images/kitchen.jpg"
+                  image: "/images/kitchen.jpg",
+                  href: "/services/drain-cleaning"
                 },
                 {
                   title: "Hydro Jetting",
                   desc: "While every big brand pushes hydro jetting as a 'one size fits all' solution, our practitioners only recommend it after a camera inspection. For Knoxville's older, more fragile pipes, we prioritize safety over high-pressure to avoid structural damage.",
-                  image: "/images/industrial.jpg"
+                  image: "/images/industrial.jpg",
+                  href: "/services/hydro-jetting"
                 },
                 {
                   title: "Sewer Services",
                   desc: "Main line cleaning and camera inspections. We find the source of recurring backups and fix them for good.",
-                  image: "/images/van.jpg"
+                  image: "/images/van.jpg",
+                  href: "/services/sewer-line-repair"
                 },
               ].map((s) => (
                 <div
@@ -325,8 +329,8 @@ export default function Home() {
                   <div className="w-12 h-1 bg-orange-600 mb-6 group-hover:w-24 transition-all duration-500"></div>
                   <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tight">{s.title}</h3>
                   <p className="text-slate-500 text-sm leading-relaxed mb-8 font-medium">{s.desc}</p>
-                  <a href="#contact" className="text-[10px] font-black uppercase tracking-widest text-orange-600 hover:text-blue-900 transition-colors">
-                    Request Quote →
+                  <a href={s.href} className="text-[10px] font-black uppercase tracking-widest text-orange-600 hover:text-blue-900 transition-colors">
+                    Learn More →
                   </a>
                 </div>
               ))}
@@ -377,18 +381,39 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                "Knoxville", "Farragut", "Powell", "Hardin Valley",
-                "Maryville", "Alcoa", "Oak Ridge", "Seymour",
-                "Lenoir City", "Halls", "Karns", "Corryton",
-                "Mascot", "Strawberry Plains", "Jefferson City",
-              ].map((city) => (
-                <div
-                  key={city}
-                  className="bg-blue-50 text-blue-800 border border-blue-200 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2"
-                >
-                  <span className="text-blue-400">📍</span> {city}, TN
-                </div>
-              ))}
+                { name: "Knoxville", href: null },
+                { name: "Farragut", href: "/areas/farragut" },
+                { name: "Powell", href: "/areas/powell" },
+                { name: "Hardin Valley", href: null },
+                { name: "Maryville", href: "/areas/maryville" },
+                { name: "Alcoa", href: null },
+                { name: "Oak Ridge", href: "/areas/oak-ridge" },
+                { name: "Seymour", href: null },
+                { name: "Lenoir City", href: null },
+                { name: "Halls", href: null },
+                { name: "Karns", href: null },
+                { name: "Corryton", href: null },
+                { name: "Mascot", href: null },
+                { name: "Strawberry Plains", href: null },
+                { name: "Jefferson City", href: null },
+              ].map((city) =>
+                city.href ? (
+                  <a
+                    key={city.name}
+                    href={city.href}
+                    className="bg-blue-50 text-blue-800 border border-blue-200 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 hover:bg-blue-100 hover:border-blue-400 transition-colors"
+                  >
+                    <span className="text-blue-400">📍</span> {city.name}, TN
+                  </a>
+                ) : (
+                  <div
+                    key={city.name}
+                    className="bg-blue-50 text-blue-800 border border-blue-200 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2"
+                  >
+                    <span className="text-blue-400">📍</span> {city.name}, TN
+                  </div>
+                )
+              )}
             </div>
           </div>
         </section>
@@ -463,20 +488,43 @@ export default function Home() {
       </main>
 
       {/* ── FOOTER ── */}
-      <footer className="bg-gray-900 text-gray-400 py-8 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+      <footer className="bg-gray-900 text-gray-400 py-12 px-4">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-sm mb-8">
           <div>
-            <p className="font-semibold text-white">Drain Cleaning Knoxville</p>
+            <p className="font-semibold text-white mb-2">Drain Cleaning Knoxville</p>
             <p>Knoxville, TN — Knox County</p>
-            <a href={PHONE_HREF} className="hover:text-white transition-colors">{PHONE}</a>
+            <a href={PHONE_HREF} className="hover:text-white transition-colors block mt-1">{PHONE}</a>
+            <p className="mt-2 text-xs">24/7 Emergency Service Available</p>
           </div>
-          <nav className="flex gap-5">
-            <a href="#services" className="hover:text-white transition-colors">Services</a>
-            <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
-            <a href="#areas" className="hover:text-white transition-colors">Areas</a>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
-          </nav>
-          <p className="text-xs">&copy; {new Date().getFullYear()} Drain Cleaning Knoxville. All rights reserved.</p>
+          <div>
+            <p className="font-semibold text-white mb-3 uppercase tracking-widest text-xs">Services</p>
+            <nav className="flex flex-col gap-2">
+              <a href="/services/drain-cleaning" className="hover:text-white transition-colors">Drain Cleaning</a>
+              <a href="/services/hydro-jetting" className="hover:text-white transition-colors">Hydro Jetting</a>
+              <a href="/services/sewer-line-repair" className="hover:text-white transition-colors">Sewer Line Repair</a>
+              <a href="/services/emergency-drain-service" className="hover:text-white transition-colors">Emergency Service</a>
+            </nav>
+          </div>
+          <div>
+            <p className="font-semibold text-white mb-3 uppercase tracking-widest text-xs">Service Areas</p>
+            <nav className="flex flex-col gap-2">
+              <a href="/areas/farragut" className="hover:text-white transition-colors">Farragut, TN</a>
+              <a href="/areas/powell" className="hover:text-white transition-colors">Powell, TN</a>
+              <a href="/areas/maryville" className="hover:text-white transition-colors">Maryville, TN</a>
+              <a href="/areas/oak-ridge" className="hover:text-white transition-colors">Oak Ridge, TN</a>
+            </nav>
+          </div>
+          <div>
+            <p className="font-semibold text-white mb-3 uppercase tracking-widest text-xs">Quick Links</p>
+            <nav className="flex flex-col gap-2">
+              <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
+              <a href="#contact" className="hover:text-white transition-colors">Free Quote</a>
+            </nav>
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-2 text-xs">
+          <p>&copy; {new Date().getFullYear()} Drain Cleaning Knoxville. All rights reserved.</p>
+          <p>Serving Knoxville, Farragut, Powell, Maryville, Oak Ridge &amp; Knox County, TN</p>
         </div>
       </footer>
 
