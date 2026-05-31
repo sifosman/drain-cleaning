@@ -19,6 +19,10 @@ export const metadata: Metadata = {
     url: "https://draincleaningknoxville.com/",
     siteName: "Drain Cleaning Knoxville",
     type: "website",
+    images: [{ url: "https://draincleaningknoxville.com/images/van.jpg", width: 1200, height: 800 }],
+  },
+  other: {
+    "google-site-verification": "YOUR_VERIFICATION_CODE", // TODO: Replace with real GSC code
   },
 };
 
